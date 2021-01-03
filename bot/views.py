@@ -20,7 +20,7 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
 #返事
 back_channelings = ["おっけ","りょ","うい","あい","おけい","まかせな"]
-back_channelings=back_channelings(random.randomint(0,5))
+back_channeling=back_channelings(random.randomint(0,5))
 
 
 @csrf_exempt
