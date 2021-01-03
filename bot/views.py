@@ -10,11 +10,16 @@ from linebot.models import (
 )
 import os
 
+import random
+
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
+
+#返事
+back_channneling = {"おっけ","りょ","うい","あい","おけい","まかせな"}
 
 
 @csrf_exempt
@@ -34,4 +39,5 @@ def handle_text_message(event):
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),TextMessage(text="二つ目の返事ok")])
  
- #応答は一度しかできない 配列で返せば5つまでいける
+#応答は一度しかできない 配列で返せば5つまでいける
+    line_bot_api.push_message(event.to,TextMessage(back_channneling(random.randam(0,5))))
