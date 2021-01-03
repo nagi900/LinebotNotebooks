@@ -33,5 +33,4 @@ def callback(request):
 def handle_text_message(event):
     line_bot_api.reply_message(event.reply_token,
                                 TextSendMessage(text=event.message.text))
-    line_bot_api.reply_message(event.reply_token,
-    TextMessage(text="おっけーだよ"))
+    line_bot_api.reply_message(event.reply_token,TextMessage(text="おっけーだよ"))
