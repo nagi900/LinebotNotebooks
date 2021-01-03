@@ -19,8 +19,8 @@ line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
 #返事
-back_channnelings = {"おっけ","りょ","うい","あい","おけい","まかせな"}
-back_channelings=back_channnelings(random.randomint(0,5))
+#back_channnelings = {"おっけ","りょ","うい","あい","おけい","まかせな"}
+#back_channelings=back_channnelings(random.randomint(0,5))
 
 
 @csrf_exempt
@@ -42,4 +42,4 @@ def handle_text_message(event):
                                 TextMessage(text="二つ目の返事ok")])
 #応答は一度しかできない 配列で返せば5つまでいける
 
-    line_bot_api.push_message(event.to,TextMessage(back_channnelings(random.randamint(0,5))))
+#    line_bot_api.push_message(event.to,TextMessage(back_channnelings(random.randamint(0,5))))
