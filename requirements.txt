@@ -3,3 +3,4 @@ line-bot-sdk==1.18.0
 gunicorn
 django-heroku
 psycopg2-binary
+randam
