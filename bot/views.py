@@ -40,4 +40,4 @@ def handle_text_message(event):
                                 [TextSendMessage(text=event.message.text + "\n okよ"),TextMessage(text="二つ目の返事ok")])
  
 #応答は一度しかできない 配列で返せば5つまでいける
-    line_bot_api.push_message(event.to,TextMessage(back_channneling(random.randam(0,5))))
+    line_bot_api.push_message(event.to,TextMessage(back_channneling(random.randamint(0,5))))
