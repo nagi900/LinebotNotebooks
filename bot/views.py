@@ -43,4 +43,4 @@ def handle_text_message(event):
                                 TextMessage(text=back_channeling)])
 #応答は一度しかできない 配列で返せば5つまでいける
 
-#    line_bot_api.push_message(event.to,TextMessage(back_channnelings(random.randamint(0,5))))
+    line_bot_api.push_message(event.to,TextMessage(text=back_channeling))
