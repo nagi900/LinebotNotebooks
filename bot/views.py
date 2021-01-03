@@ -21,7 +21,7 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 #返事
 #back_channnelings = {"おっけ","りょ","うい","あい","おけい","まかせな"}
 #back_channelings=back_channnelings(random.randomint(0,5))
-
+doko = "関数の中"
 
 @csrf_exempt
 def callback(request):
@@ -37,7 +37,7 @@ def callback(request):
 # オウム返し
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
-    doko = "関数の中"
+    
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
                                 TextMessage(text="二つ目の返事ok"),
