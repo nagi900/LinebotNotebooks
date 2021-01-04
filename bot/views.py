@@ -18,6 +18,10 @@ YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
+#後で送信情報からuser_idを取得できるように変更
+user_id = os.environ["YOUR_USER_ID"]
+#
+
 #返事
 back_channelings = ["おっけ","りょ","うい","あい","おけい","まかせな"]
 back_channeling=back_channelings[random.randint(0,5)]
@@ -39,8 +43,9 @@ def handle_text_message(event):
     
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
-                                TextMessage(text="二つ目の返事ok"),
+                                TextMessage(text=),
                                 TextMessage(text=back_channeling)])
 #応答は一度しかできない 配列で返せば5つまでいける
 
-    line_bot_api.push_message(event.to,TextMessage(text=back_channeling))
+#↓これができない
+    line_bot_api.push_message(user_id,TextMessage(text=back_channeling))
