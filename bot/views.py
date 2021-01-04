@@ -43,7 +43,7 @@ def handle_text_message(event):
     
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
-                                TextMessage(text=),
+                                TextMessage(text="相槌が二回きたらok"),
                                 TextMessage(text=back_channeling)])
 #応答は一度しかできない 配列で返せば5つまでいける
 
