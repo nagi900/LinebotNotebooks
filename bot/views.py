@@ -20,9 +20,7 @@ YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
-#後で送信情報からuser_idを取得できるように変更
-user_id = os.environ["YOUR_USER_ID"]
-#
+now_user_id=0
 
 #返事
 back_channelings = ["おっけ","りょ","うい","あい","おけい","まかせな"]
@@ -51,6 +49,8 @@ def handle_text_message_konotanngowotsuika(event):#
                                 TextMessage(text=name),
                                 TextMessage(text=profile.user_id),
                                 TextMessage(text=back_channeling)])
+    
+    line_bot_api.push_message(profile.user_id,TextMessage(text="プッシュできてるよ！"))
 #応答は一度しかできない 配列で返せば5つまでいける
 
 #↓これができない
