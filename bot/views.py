@@ -11,6 +11,7 @@ from linebot.models import (
 import os
 
 import random
+import time
 
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
@@ -39,7 +40,7 @@ def callback(request):
 
 # オウム返し
 @handler.add(MessageEvent, message=TextMessage)
-def handle_text_message_kokotuika(event):#
+def handle_text_message_konotanngowotsuika(event):#
     
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
@@ -48,4 +49,7 @@ def handle_text_message_kokotuika(event):#
 #応答は一度しかできない 配列で返せば5つまでいける
 
 #↓これができない
+@handler.add(MessageEvent, message=TextMessage)
+def handle_text_message_konobunnshouwotsuika(event):#
+    time.sleep(20.0)
     line_bot_api.push_message(user_id,TextMessage(text=back_channeling))
