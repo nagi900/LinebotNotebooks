@@ -49,7 +49,7 @@ def handle_text_message_konotanngowotsuika(event):#
 #応答は一度しかできない 配列で返せば5つまでいける
 
 #↓これができない
-@handler.add(MessageEvent, message=TextMessage)
-def handle_text_message_konobunnshouwotsuika(event):#
-#    time.sleep(20.0)
-    line_bot_api.push_message(user_id,TextMessage(text=back_channeling))
+#@handler.add(MessageEvent, message=TextMessage)
+#def handle_text_message_konobunnshouwotsuika(event):#
+##    time.sleep(20.0)
+#    line_bot_api.push_message(user_id,TextMessage(text=back_channeling))
