@@ -39,7 +39,7 @@ def callback(request):
 
 # オウム返し
 @handler.add(MessageEvent, message=TextMessage)
-def handle_text_message(event):
+def handle_text_message_kokotuika(event):#
     
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
