@@ -12,7 +12,7 @@ from linebot.models import (
 import os
 
 import random
-#import time
+import time
 
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
@@ -50,6 +50,8 @@ def handle_text_message_konotanngowotsuika(event):#
                                 TextMessage(text=profile.user_id),
                                 TextMessage(text=back_channeling)])
     
+    time.sleep(20)
+
     line_bot_api.push_message(profile.user_id,TextMessage(text="プッシュできてるよ！"))
 #応答は一度しかできない 配列で返せば5つまでいける
 
