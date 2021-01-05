@@ -11,7 +11,7 @@ from linebot.models import (
 import os
 
 import random
-import time
+#import time
 
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
@@ -51,5 +51,5 @@ def handle_text_message_konotanngowotsuika(event):#
 #↓これができない
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message_konobunnshouwotsuika(event):#
-    time.sleep(20.0)
+#    time.sleep(20.0)
     line_bot_api.push_message(user_id,TextMessage(text=back_channeling))
