@@ -51,7 +51,7 @@ def handle_text_message_konotanngowotsuika(event):#
         line_bot_api.push_message(profile.user_id,TextMessage(text=f"{back_channeling} メモね"))
 
     if event.message.text.startswith("か\n") or event.message.text.startswith("カレンダー"):
-        line_bot_api.push_message(profile.user_id,TextMessage(text=f"{back_channeling} メモね"))
+        line_bot_api.push_message(profile.user_id,TextMessage(text=f"{back_channeling} カレンダーね"))
 
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
