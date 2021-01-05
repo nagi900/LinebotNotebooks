@@ -7,6 +7,7 @@ from linebot.models import (
     MessageEvent,
     TextMessage,
     TextSendMessage,
+   # MessageAction,
 )
 import os
 
@@ -41,10 +42,11 @@ def callback(request):
 # オウム返し
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message_konotanngowotsuika(event):#
-    
+    profile = line_bot_api.get_profile(event.source.user_id)
+
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
-                                TextMessage(text="相槌が二回きたらok"),
+                                TextMessage(text=profile),
                                 TextMessage(text=back_channeling)])
 #応答は一度しかできない 配列で返せば5つまでいける
 
@@ -52,4 +54,4 @@ def handle_text_message_konotanngowotsuika(event):#
 #@handler.add(MessageEvent, message=TextMessage)
 #def handle_text_message_konobunnshouwotsuika(event):#
 ##    time.sleep(20.0)
-#    line_bot_api.push_message(user_id,TextMessage(text=back_channeling))
+#    line_bot_api.push_message(to=,TextMessage(text=back_channeling))
