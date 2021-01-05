@@ -47,7 +47,10 @@ def handle_text_message_konotanngowotsuika(event):#
     print (f"profileの中身を表示します！！！！中身は{profile}です!")
     print (f"あなたの名前を表示します！！あなたは{name}です！")
 
-    if event.message.text.startswith("メモ") or event.message.text.startswith("めも"):
+    if event.message.text.startswith("メモ") or event.message.text.startswith("めも") or event.message.text.startswith("め\n"):
+        line_bot_api.push_message(profile.user_id,TextMessage(text=f"{back_channeling} メモね"))
+
+    if event.message.text.startswith("か\n") or event.message.text.startswith("カレンダー"):
         line_bot_api.push_message(profile.user_id,TextMessage(text=f"{back_channeling} メモね"))
 
     line_bot_api.reply_message(event.reply_token,
