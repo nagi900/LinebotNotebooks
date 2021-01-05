@@ -40,17 +40,23 @@ def callback(request):
 # オウム返し
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message_konotanngowotsuika(event):#
+
+
     profile = line_bot_api.get_profile(event.source.user_id)
     name = profile.display_name
     print (f"profileの中身を表示します！！！！中身は{profile}です!")
     print (f"あなたの名前を表示します！！あなたは{name}です！")
+
+    if "メモ"== event.message.text :
+        line_bot_api.push_message(profile.user_id,TextMessage(text=f"メモね{back_channeling}"))
+
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
                                 TextMessage(text=name),
                                 TextMessage(text=profile.user_id),
                                 TextMessage(text=back_channeling)])
     
-    time.sleep(20)
+    time.sleep(10)
 
     line_bot_api.push_message(profile.user_id,TextMessage(text="プッシュできてるよ！"))
 #応答は一度しかできない 配列で返せば5つまでいける
