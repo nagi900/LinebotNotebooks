@@ -43,7 +43,7 @@ def callback(request):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message_konotanngowotsuika(event):#
     profile = line_bot_api.get_profile(event.source.user_id)
-
+    print (f"profileの中身を表示します！！！！/n中身は{profile}")
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
                                 TextMessage(text=profile),
