@@ -1,7 +1,5 @@
-import random
+str1="めも"
+str2="めもしてね"
 
-back_channelings = ["おっけ","りょ","うい","あい","おけい","まかせな"]
-number = random.randint(0,5)
-back_channeling=back_channelings[random.randint(0,5)]
-print(back_channeling)
-print(number)
+if str1 in str2:
+    print("部分一致")

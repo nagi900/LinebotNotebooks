@@ -47,7 +47,7 @@ def handle_text_message_konotanngowotsuika(event):#
     print (f"profileの中身を表示します！！！！中身は{profile}です!")
     print (f"あなたの名前を表示します！！あなたは{name}です！")
 
-    if "メモ"== event.message.text :
+    if "メモ" in event.message.text or "めも" in event.message.text:
         line_bot_api.push_message(profile.user_id,TextMessage(text=f"メモね{back_channeling}"))
 
     line_bot_api.reply_message(event.reply_token,
