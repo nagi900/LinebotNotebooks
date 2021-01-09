@@ -15,7 +15,7 @@ import os
 
 import random
 import time
-import cv2
+#import cv2
 
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
@@ -63,14 +63,14 @@ def handle_text_message_konotanngowotsuika(event):#
 
     if not subject:
         
-        img_thumbnail = cv2.imread(f"../img/thumbnail/{subject}.png") #subject名でサムネイル画像を取得(あんま良くないかも)
+        #img_thumbnail = cv2.imread(f"../img/thumbnail/{subject}.png") #subject名でサムネイル画像を取得(あんま良くないかも)
         line_bot_api.push_message(profile.user_id,TextMessage(text=f"{back_channeling} {subject_name}ね"))
         line_bot_api.push_message(profile.user_id,
             TemplateSendMessage(alt_text="bottons template",
-                template=BottonsTemplate(
-                    thumnail_image_url=img_thumbnail,
+                template=ButtonsTemplate(
+                    thumnail_image_url=profile.picture_url,
                     title=f"{subject_name}",
-                    
+
                 )))
 
  
