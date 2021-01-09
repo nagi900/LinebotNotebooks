@@ -69,10 +69,10 @@ def handle_text_message_konotanngowotsuika(event):#
         time.sleep(5)
 
         line_bot_api.push_message(profile.user_id,
-            TemplateSendMessage(alt_text="buttons template",
+            TemplateSendMessage(alt_text="Buttons template",
                 template=ButtonsTemplate(
                     thumnail_image_url=profile.picture_url,
-                    title=f"{subject_name}",
+                    title=subject_name,
                     text="なんもないよ",
                     actions=[MessageAction(text="なんもないよ",label="ラベル")]
 
