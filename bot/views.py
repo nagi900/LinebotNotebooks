@@ -71,8 +71,8 @@ def handle_text_message_konotanngowotsuika(event):#
         line_bot_api.push_message(profile.user_id,
             TemplateSendMessage(alt_text="Buttons template",
                 template=ButtonsTemplate(
-                    thumnail_image_url=profile.picture_url,
-                    title=subject_name,
+                    thumnail_image_url="https://drive.google.com/drive/folders/1ZA2KpTnv4mi6GY0V1nA1idq-5khJuXt7",
+                    title=f"{subject_name}",
                     text="なんもないよ",
                     actions=[MessageAction(text="なんもないよ",label="ラベル")]
 
