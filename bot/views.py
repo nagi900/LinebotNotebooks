@@ -61,7 +61,7 @@ def handle_text_message_konotanngowotsuika(event):#
         subject_name = "カレンダー"
         
 
-    if not subject:
+    if not subject==False:
         
         #img_thumbnail = cv2.imread(f"../img/thumbnail/{subject}.png") #subject名でサムネイル画像を取得(あんま良くないかも)
         line_bot_api.push_message(profile.user_id,TextMessage(text=f"{back_channeling} {subject_name}ね"))
