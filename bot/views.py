@@ -69,7 +69,7 @@ def handle_text_message_konotanngowotsuika(event):#
         time.sleep(5)
 
         line_bot_api.push_message(profile.user_id,
-            TemplateSendMessage(alt_text="bottons template",
+            TemplateSendMessage(alt_text="buttons template",
                 template=ButtonsTemplate(
                     thumnail_image_url=profile.picture_url,
                     title=f"{subject_name}",
@@ -78,7 +78,7 @@ def handle_text_message_konotanngowotsuika(event):#
                 )
             )
 
- 
+    #  一回プッシュメッセージを送るともうだめなのかもしれない
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
                                 TextMessage(text=name),
