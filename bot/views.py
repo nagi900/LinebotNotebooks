@@ -65,13 +65,18 @@ def handle_text_message_konotanngowotsuika(event):#
         
         #img_thumbnail = cv2.imread(f"../img/thumbnail/{subject}.png") #subject名でサムネイル画像を取得(あんま良くないかも)
         line_bot_api.push_message(profile.user_id,TextMessage(text=f"{back_channeling} {subject_name}ね"))
+
+        time.sleep(5)
+
         line_bot_api.push_message(profile.user_id,
             TemplateSendMessage(alt_text="bottons template",
                 template=ButtonsTemplate(
                     thumnail_image_url=profile.picture_url,
                     title=f"{subject_name}",
 
-                )))
+                    )
+                )
+            )
 
  
     line_bot_api.reply_message(event.reply_token,
