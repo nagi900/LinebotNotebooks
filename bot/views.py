@@ -74,7 +74,7 @@ def handle_text_message_konotanngowotsuika(event):#
                     thumnail_image_url=profile.picture_url,
                     title=f"{subject_name}",
                     text="なんもないよ",
-                    actions=[URIAction(uri="https://dashboard.heroku.com/apps/line900notebooks/settings",label="ラベル")]
+                    actions=[MessageAction(text="なんもないよ",label="ラベル")]
 
                     )
                 )
