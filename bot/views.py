@@ -71,7 +71,7 @@ def handle_text_message_konotanngowotsuika(event):#
         line_bot_api.push_message(profile.user_id,
             TemplateSendMessage(alt_text="Buttons template",
                 template=ButtonsTemplate(
-                    thumnail_image_url="https://drive.google.com/drive/folders/1ZA2KpTnv4mi6GY0V1nA1idq-5khJuXt7",
+                    thumnail_image_url="https://github.com/nagi900/LinebotNotebooks/blob/master/img/thumbnail/calender.png",
                     title=f"{subject_name}",
                     text="なんもないよ",
                     actions=[MessageAction(text="なんもないよ",label="ラベル")]
@@ -80,7 +80,6 @@ def handle_text_message_konotanngowotsuika(event):#
                 )
             )
 
-    #  一回プッシュメッセージを送るともうだめなのかもしれない
     line_bot_api.reply_message(event.reply_token,
                                 [TextSendMessage(text=event.message.text + "\n okよ"),
                                 TextMessage(text=name),
